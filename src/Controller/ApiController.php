@@ -292,7 +292,7 @@ class ApiController extends AbstractController
             ->to($email)
             ->subject(str_replace("flight_id", $flight_id, $this->getParameter('app.MAIL_SUBJ')))
             ->text($text);
-        //$mailer->send($email); //отправка отключена
+        $mailer->send($email);
         return true;
     }
 }
